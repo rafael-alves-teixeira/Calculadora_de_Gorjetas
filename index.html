@@ -9,26 +9,24 @@
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>Calculadora de Gorjetas</title>
 </head>
+
 <body>
-    <div class="container">
+    <main class="container">
         <div>
             <h1 class="title">Calcule a Gorjeta</h1>
         </div>
         <div>
-            <form class="tipsForm"action="">
-                <label for="bill">
-                    <p>Quanto ficou a conta?</p>
-                </label>
+            <form class="tipsForm" id="tipsForm" action="">
+                <label for="bill">Quanto ficou a conta?</label>
                 <p>
-                    R$ <input type="number" placeholder="100" name="bill" id="bill" class="formInput">
+                    R$ <input type="number" placeholder="100" step="any" min="0" name="bill" id="bill" class="formInput"
+                        required>
                 </p>
-                <label for="serviceQual">
-                    <p>Como foi seu serviço?</p>
-                </label>
+                <label for="serviceQual">Como foi seu serviço?</label>
                 <p>
-                    <select name="serviceQual" id="serviceQual" class="formSelect">
-                        <option disabled selected value="0">--Escolha uma opção</option>
-                        <option value="0.3">30% - Incrível</option>
+                    <select name="serviceQual" id="serviceQual" class="formSelect" required>
+                        <option disabled selected>--Escolha uma opção</option>
+                        <option value="0.25">25% - Incrível</option>
                         <option value="0.2">20% - Bom</option>
                         <option value="0.15">15% - Aceitável</option>
                         <option value="0.1">10% - Ruim</option>
@@ -39,12 +37,18 @@
                     <p>Quantas pessoas irão dividir a conta?</p>
                 </label>
                 <p>
-                    <input type="number" placeholder="1" name="people" id="people" class="formInput">pessoa(s)
+                    <input type="number" placeholder="1" name="people" id="people" class="formInput"> pessoa(s)
                 </p>
                 <button type="submit" class="formSubmit">Calcular!</button>
             </form>
         </div>
-    </div>
+        <div id="totalTip">
+            Gorjeta Total:
+            R$<span id="tip">0.00</span>
+            <span1 id="each">cada</span>
+        </div>
+    </main>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 
 </html>
